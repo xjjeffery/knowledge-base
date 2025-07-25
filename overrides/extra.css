@@ -1,0 +1,89 @@
+[data-md-color-scheme="default"] {
+  --timeline-bg-color: #fffff0;
+}
+
+[data-md-color-scheme="slate"] {
+  --timeline-bg-color: #000000;
+}
+
+/* mermaid 的样式设置 */
+.mermaid {
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* max height of code block */
+/* https://github.com/squidfunk/mkdocs-material/issues/3444 */
+.md-typeset pre>code {
+  max-height: 35rem;
+}
+
+:root {
+  /* 圆角半径 */
+  --base-border-radius: 0.8rem;
+}
+
+/* 隐藏 navigation 和 toc 保持正文大小不变 */
+.md-content {
+  max-width: 890px;
+  margin: 0 auto;
+}
+
+/* 圆角设计 */
+
+/* Grid Cards */
+.md-typeset .grid.cards>ul>li {
+  border-radius: var(--base-border-radius);
+}
+
+/* Markdown Button */
+.md-typeset .md-button {
+  border-radius: var(--base-border-radius);
+}
+
+/* Forms */
+input.md-search__input {
+  border-radius: var(--base-border-radius);
+}
+
+.md-search__form {
+  border-radius: var(--base-border-radius);
+}
+
+[data-md-toggle="search"]:checked~.md-header .md-search__form {
+  border-top-right-radius: var(--base-border-radius);
+  border-top-left-radius: var(--base-border-radius);
+}
+
+[dir="ltr"] .md-search__output {
+  border-bottom-right-radius: var(--base-border-radius);
+  border-bottom-left-radius: var(--base-border-radius);
+}
+
+/* 日志块 */
+.timeline-card {
+  background-color: var(--timeline-bg-color);
+  border-radius: var(--base-border-radius);
+}
+
+.timeline-content:before {
+  background-color: var(--timeline-bg-color);
+}
+
+/* 日志分类 */
+.changelog-type-newnote {
+  background-color: #e6ad5bb0;
+}
+
+.changelog-type-newnote::before {
+  content: "新增笔记";
+}
+
+.changelog-type-updatenote {
+  background-color: #3f6ec6b0;
+}
+
+.changelog-type-updatenote::before {
+  content: "笔记更新";
+}

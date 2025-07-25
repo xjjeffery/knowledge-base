@@ -1,0 +1,181 @@
+# Infomation
+site_name: CS Notes
+site_author: jeffery
+site_dir: site
+site_url: ""
+site_description: 一个记录自学 CS 的在线知识库
+use_directory_urls: false
+
+# Repository
+repo_name: cs-notes
+repo_url: https://github.com/xjjeffery/cs-notes
+
+# Copyright
+copyright: Copyright &copy; 2025-present JunXu</br>The website content is licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a>
+
+theme:
+  name: material
+  language: zh
+  palette:
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: light blue
+      accent: deep purple
+      toggle:
+        icon: material/weather-sunny
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: black
+      accent: deep purple
+      toggle:
+        icon: material/weather-night
+        name: Switch to light mode
+  font:
+    text: Roboto Slab  # Noto Sans SC # LXGW WenKai Mono TC 
+    code: Martian Mono # JetBrains Mono
+  icon:
+    logo: material/notebook-outline
+    repo: fontawesome/brands/github
+    previous: fontawesome/solid/angle-left
+    next: fontawesome/solid/angle-right
+  features:
+    ### navigation ###
+    - navigation.tracking
+    - navigation.tabs
+    # - navigation.tabs.sticky
+    # - navigation.sections
+    # - navigation.expand
+    - navigation.path
+    - navigation.prune
+    - navigation.indexes
+    - toc.follow
+    - navigation.top
+    ### search ###
+    - search.suggest
+    - search.highlight
+    - search.share
+    - announce.dismiss
+    - header.autohide
+    ### code block ###
+    - content.code.annotate
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.tooltips
+    - content.footnote.tooltips
+  custom_dir: overrides
+
+markdown_extensions:
+    ### code block ###
+    - pymdownx.highlight:
+        linenums: true
+        linenums_style: pymdownx-inline
+        anchor_linenums: true
+        line_spans: __span
+        pygments_lang_class: true
+    - pymdownx.inlinehilite
+    - pymdownx.snippets
+    - pymdownx.superfences:
+        custom_fences:
+          - name: mermaid
+            class: mermaid
+            format: !!python/name:pymdownx.superfences.fence_code_format
+    ### admonitions ###
+    - admonition
+    - pymdownx.details
+    ### annotations & images ###
+    - attr_list
+    - md_in_html
+    - pymdownx.blocks.caption
+    ### content tabs ###
+    - pymdownx.tabbed:
+        alternate_style: true
+    ### data tables ###
+    - tables
+    ### footnotes ###
+    - footnotes
+    ### formatting ###
+    - pymdownx.critic
+    - pymdownx.caret
+    - pymdownx.keys
+    - pymdownx.mark
+    - pymdownx.tilde
+    ### icons ###
+    - pymdownx.emoji:
+        emoji_index: !!python/name:material.extensions.emoji.twemoji
+        emoji_generator: !!python/name:material.extensions.emoji.to_svg
+    ### lists ###
+    - def_list
+    - pymdownx.tasklist:
+        custom_checkbox: true
+    ### tooltips ###
+    - abbr
+    - toc:
+        permalink: true
+        toc_depth: 3
+        slugify: !!python/object/apply:pymdownx.slugs.slugify {}
+    - pymdownx.arithmatex:
+        generic: true
+    - pymdownx.betterem:
+        smart_enable: all
+    - pymdownx.details
+    - pymdownx.keys
+    - pymdownx.smartsymbols
+    - pymdownx.tabbed:
+        alternate_style: true
+        combine_header_slug: true
+        slugify: !!python/object/apply:pymdownx.slugs.slugify
+            kwds:
+                case: lower
+
+plugins:
+  - offline
+  - glightbox:
+      touchNavigation: true
+      loop: false
+      effect: zoom
+      slide_effect: none
+      width: 100%
+      height: auto
+      zoomable: true
+      draggable: false
+      auto_caption: false
+      caption_position: bottom
+  - search:
+      separator: '[\s\u200b\-]'
+      jieba_dict_user: dict.small.txt
+  - meta
+  - git-revision-date-localized:
+      enabled: !ENV [CI, true]
+      type: datetime
+      timezone: Asia/Shanghai
+      locale: zh
+      fallback_to_build_date: false
+      enable_creation_date: true
+      exclude:
+        - index.md
+      enabled: true
+  - statistics:
+      ignore_languages:
+        - mermaid
+      page_check_metadata: counter
+      words_per_minute: 300
+      codelines_per_minute: 80
+  - changelog
+  - open-in-new-tab
+
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/xjjeffery
+
+extra_css:
+  - extra.css
+
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.min.js
+
+nav:
