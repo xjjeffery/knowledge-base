@@ -1,0 +1,58 @@
+name: deploy
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.x
+
+      - name: Install dependencies
+        run: |
+          pip install mkdocs==1.6.1
+          pip install mkdocs-material==9.6.10
+          pip install mkdocs-glightbox
+          pip install mkdocs-git-revision-date-localized-plugin==1.4.0
+          pip install mkdocs-open-in-new-tab
+          pip install jieba
+          git clone https://github.com/TonyCrane/mkdocs-statistics-plugin.git
+          cd mkdocs-statistics-plugin
+          pip install .
+          cd ..
+          rm -r mkdocs-statistics-plugin
+          git clone https://github.com/TonyCrane/mkdocs-changelog-plugin.git
+          cd mkdocs-changelog-plugin
+          pip install .
+
+      - name: Build static site
+        run: |
+          mkdocs build
+
+      - name: Clone destination repository
+        run: |
+          git clone https://xjjeffery:${{ secrets.DEPLOY_TOKEN }}@github.com/xjjeffery/xjjeffery.github.io.git target_repo
+
+          rm -rf target_repo/*
+          cp -r site/* target_repo/
+
+      - name: Commit and push changes
+        run: |
+          cd target_repo
+          git config --local user.name "jeffery"
+          git config --local user.email "jeffery.xu.chn@gmail.com"
+          git add .
+          SOURCE_COMMIT_MSG="${{ github.event.head_commit.message }}"
+          SOURCE_COMMIT_TIME="${{ github.event.head_commit.timestamp }}"
+          git commit -m "$SOURCE_COMMIT_MSG" --date="$SOURCE_COMMIT_TIME"
+          git push origin master
