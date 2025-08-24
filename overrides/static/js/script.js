@@ -1,3 +1,12 @@
+console.log('%cCopyright © 2025 xjjeffery.github.io',
+    'background-color: #ff00ff; color: white; font-size: 24px; font-weight: bold; padding: 10px;'
+);
+console.log('%c   /\\_/\\', 'color: #8B4513; font-size: 20px;');
+console.log('%c  ( o.o )', 'color: #8B4513; font-size: 20px;');
+console.log(' %c  > ^ <', 'color: #8B4513; font-size: 20px;');
+console.log('  %c /  ~ \\', 'color: #8B4513; font-size: 20px;');
+console.log('  %c/______\\', 'color: #8B4513; font-size: 20px;');
+
 document.addEventListener('contextmenu', function (event) {
     event.preventDefault();
 });
@@ -62,11 +71,19 @@ document.addEventListener('DOMContentLoaded', function() {
             timelineList.innerHTML = ''; // 清空现有内容
             data.forEach(item => {
                 const li = document.createElement('li');
-                li.innerHTML = `
-                    <div class="focus"></div>
-                    <div><a href="${item.link}" target="_blank">${item.event}</a></div>
-                    <div>${item.date}</div>
-                `;
+                if (item.link) {
+                    li.innerHTML = `
+                        <div class="focus"></div>
+                        <div><a href="${item.link}">${item.event}</a></div>
+                        <div>${item.date}</div>
+                    `;
+                } else {
+                    li.innerHTML = `
+                        <div class="focus"></div>
+                        <div>${item.event}</div>
+                        <div>${item.date}</div>
+                    `;
+                }
                 timelineList.appendChild(li);
             });
         })

@@ -1,10 +1,9 @@
 @font-face {
     font-family: "a";
-    /*中文字体 更多模板请访问：https://www.bootstrapmb.com */
+    /*中文字体*/
     src: url();
     font-display: swap;
 }
-
 
 @font-face {
     font-family: "b";
@@ -90,7 +89,6 @@ body {
     background: radial-gradient(white, #d8eaff);
     background-size: 100%;
     background-position: center;
-
     height: 100%;
     width: 100%;
     position: fixed;
@@ -110,7 +108,6 @@ body {
     position: relative;
     border-radius: 50%;
     background: #472eff;
-
     animation: zoom 1s linear infinite;
 }
 
@@ -138,6 +135,7 @@ body {
     backdrop-filter:  blur(var(--back_filter));
     -webkit-backdrop-filter: blur(var(--back_filter));
     z-index: -99999999;
+   
 }
 
 .jeffery-main {
@@ -166,7 +164,6 @@ body {
 .jeffery-left::-webkit-scrollbar {
     display: none;
 }
-
 
 .logo {
     flex-shrink: 0;
@@ -211,7 +208,6 @@ body {
    font-size: 18px;
     margin-right: 10px;
 }
-
 .left-tag {
     display: flex;
     flex-direction: row;
@@ -274,12 +270,13 @@ body {
     width: calc(100% - 230px);
     display: flex;
     padding: 20px;
-  position: relative;
+    position: relative;
     padding-bottom: 50px;
     flex-direction: column;
 }
 
 .welcome {
+
     font-size: 65px;
     font-weight: 800;
     margin: 20px 0;
@@ -296,8 +293,8 @@ body {
     border-radius: 50%;
     border: 0.5px solid #ffffff;
 }
-
 .description {
+
     font-size: 20px;
     margin-top: 7px;
 }
@@ -332,6 +329,7 @@ body {
     100% {
         background-position: 100%;
     }
+
 }
 
 .purpleText {
@@ -413,6 +411,7 @@ body {
     transform: translateY(-2px);
     background: var(--item_hover_color);
 }
+
 
 .iconItem:hover .iconTip {
     display: block;
@@ -520,7 +519,6 @@ body {
     font-weight: normal;
     font-size: 16px;
     margin: 0px;
-
     transition: font-size 0.4s ease;
     color: var(--item_left_title_color);
 }
@@ -530,6 +528,7 @@ body {
     height: 100%;
     width: 80%;
 }
+
 
 .projectItemRight {
     overflow: hidden;
@@ -544,6 +543,21 @@ body {
 .projectItemRight img {
     height: 39px;
     width: 39px;
+}
+
+.skill {
+    padding: 25px;
+    width: 100%;
+}
+
+.skill img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.skill #skillWap {
+    display: none;
 }
 
 footer {
@@ -569,9 +583,11 @@ footer {
     .a {
         width: calc(50% - 20px);
     }
+
     .projectItem{
         margin: 10px;
     }
+
     .b {
         width: calc(50% - 20px);
     }
@@ -584,12 +600,10 @@ footer {
 
     .a .projectItemRight {
         display: none;
-
     }
 
     .a .projectItemRight img {
         display: none;
-
     }
 
     .a .projectItemLeft {
@@ -623,29 +637,38 @@ footer {
         font-size: 10vw;
         margin: 2vw 0;
     }
-    .iconContainer {
+
+    .iconContainer {  
      margin-top: 4vw;
     }
+
     .projectItem{
         padding: 10px;
     }
+
     .projectItemLeft p {
         font-size: 13px;
     }
 
     .projectItemLeft h1 {
-
         font-size: 18px;
     }
 
     .projectItem:hover h1 {
         font-size: 20px;
     }
+
+    .skill #skillWap {
+        display: block;
+    }
+
+    .skill #skillPc {
+        display: none;
+    }
 }
 
 .tc {
     position: fixed;
-   
     display: flex;
     visibility: hidden;
     width: 100vw;
@@ -662,13 +685,11 @@ footer {
 
 .tc-main {
     z-index: 100000;
-    
     width: 80%;
     max-width: 300px;
     min-height: 200px;
     background-color: #ffffff;
     border-radius: 15px;
-
     display: flex;
     transition: transform 0.2s linear;
     align-items: center;
@@ -760,7 +781,6 @@ footer {
     top: 12.5%;
     bottom: 12.5%;
     right: 5px;
-
     border-radius: 20px;
     transition: right 0.2s ease-in 0s;
 }

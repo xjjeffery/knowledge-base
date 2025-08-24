@@ -1,6 +1,8 @@
 # Knowledge Base
 
-这是一个使用 [MkDocs](https://www.mkdocs.org/) 构建的静态网站，部署在 GitHub Pages 上。作为自己的在线知识库，记录并分享自己的学习和工作经验。
+> 主页采用 Zyyo 开源的主页框架，在此感谢 Zyyo 开源贡献。如果您也想采用这个主页，可以在 [homepage](https://github.com/ZYYO666/homepage) 获取源码。
+
+至于这个博客，本人使用 [MkDocs](https://www.mkdocs.org/) 构建的静态网站，部署在 GitHub Pages 上（将时间花在更重要的事情上 —— 就是懒）。作为自己的在线知识库，记录并分享自己的学习和工作经验。
 
 **为什么使用 MkDocs**:
 
